@@ -1,5 +1,5 @@
 resource "aws_vpc_peering_connection" "roboshop_to_default" {
-  count = var.is_peering_required ? 1 : 0
+  count = var.is_peering_required ? 1 : 0    #True = count 1 and false = 0 
   # peer_owner_id = var.vpcmodule.id
   peer_vpc_id   = data.aws_vpc.default.id   # Acceptor VPC which is default here
   vpc_id        = aws_vpc.vpcmodule.id #Requestor
